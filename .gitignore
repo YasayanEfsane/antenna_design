@@ -1,0 +1,7 @@
+# MATLAB
+*.mat
+*.asv
+*.slxc
+
+# Results (Optional, keeping png and csv, ignoring mat)
+results/*.mat

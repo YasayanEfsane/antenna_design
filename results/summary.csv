@@ -1,0 +1,16 @@
+Parameter,Value
+Analytical Patch Length (mm),28.8093
+Optimized Patch Length (mm),26.8977
+Analytical Patch Width (mm),37.2343
+Optimized Patch Width (mm),36.9505
+Feed Offset (mm),7.2023
+Resonance Frequency (GHz),2.4550
+S11 at 2.45 GHz (dB),-26.3326
+Minimum S11 (dB),-27.5917
+VSWR at Resonance,1.0871
+Lower Cutoff Freq (GHz),2.3938
+Upper Cutoff Freq (GHz),2.5180
+Bandwidth (MHz),124.1738
+Fractional Bandwidth (%),5.0561
+Max Gain (dBi),4.1265
+Radiation Efficiency,0.7309
