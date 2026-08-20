@@ -19,6 +19,16 @@ This project performs the analytical design, electromagnetic simulation, and opt
 * `report/project_report.md`: The auto-generated technical summary report.
 * `results/`: Contains generated PNG plots, CSV, and MAT result files.
 
+## Simulation Results
+
+After running the full-wave electromagnetic simulation and parameter optimization, the antenna is perfectly tuned to 2.45 GHz.
+
+### Reflection Coefficient (S11)
+![Optimized S11 Plot](results/optimized_s11.png)
+
+### Voltage Standing Wave Ratio (VSWR)
+![Optimized VSWR Plot](results/optimized_vswr.png)
+
 ## How to Run
 
 1. Navigate to this directory (`antenna_design`) in the MATLAB command window.
