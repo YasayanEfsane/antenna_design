@@ -5,7 +5,7 @@
 
 A comprehensive MATLAB project for the analytical design, full-wave electromagnetic simulation, parameter optimization, and array synthesis of a 2.45 GHz Microstrip Patch Antenna. This antenna is optimized for Wi-Fi, Bluetooth, and ISM band applications using an FR-4 substrate.
 
-## 📌 Features
+##  Features
 
 - **Analytical Design:** Calculates theoretical patch dimensions based on the transmission line model.
 - **Full-Wave Simulation:** Evaluates Impedance, S11, VSWR, and 3D Radiation Patterns using MATLAB's Antenna Toolbox.
@@ -13,14 +13,14 @@ A comprehensive MATLAB project for the analytical design, full-wave electromagne
 - **Antenna Array Synthesis:** Constructs a 2x2 phased array and calculates the enhanced directivity and radiation pattern using the Pattern Multiplication principle (+6 dB Gain improvement).
 - **Automated Reporting:** Generates a structured markdown technical report and exports all numerical data to CSV/MAT files.
 
-## 🛠️ Requirements
+##  Requirements
 
 - MATLAB R2021a or newer.
 - **Antenna Toolbox** (Required for 3D modeling and EM simulation).
 - **Optimization Toolbox** (Required for parameter tuning).
 - **RF Toolbox** (Optional, used for Smith Chart generation).
 
-## 📂 Project Structure
+##  Project Structure
 
 - `main.m`: The primary execution script that runs the single-element design, optimization, and report generation.
 - `run_array_simulation.m`: A standalone script to build and simulate the 2x2 antenna array.
@@ -29,7 +29,7 @@ A comprehensive MATLAB project for the analytical design, full-wave electromagne
 - `report/`: Contains the auto-generated `project_report.md`.
 - `results/`: Contains generated PNG plots, CSV tables, and MAT data files.
 
-## 🚀 How to Run
+##  How to Run
 
 1. Clone the repository and navigate to the folder in the MATLAB command window.
 2. **Run tests** to ensure the core mathematical functions and your MATLAB environment are set up correctly:
@@ -46,7 +46,7 @@ A comprehensive MATLAB project for the analytical design, full-wave electromagne
    run_array_simulation
    ```
 
-## 📊 Simulation Results
+##  Simulation Results
 
 After running the full-wave electromagnetic simulation and parameter optimization, the single patch is perfectly tuned to 2.45 GHz, and the 2x2 array demonstrates a massive gain improvement.
 
