@@ -22,26 +22,56 @@ function ant = build_patch_antenna(cfg, dim, W_feed, feed_offset)
     d.LossTangent = cfg.tan_delta;
     d.Thickness = cfg.h;
     
-    % Create patch microstrip antenna
-    ant = patchMicrostrip;
-    ant.Length = dim.L;
-    ant.Width = dim.W;
-    ant.GroundPlaneLength = dim.L_gnd;
-    ant.GroundPlaneWidth = dim.W_gnd;
-    ant.Substrate = d;
+    % Create patch microstrip antenna based on feed type
+    if isfield(cfg, 'feed_type') && strcmpi(cfg.feed_type, 'inset')
+        % Microstrip line inset feed
+        if ~isempty(which('patchMicrostripInsetfed'))
+            ant = patchMicrostripInsetfed;
+            ant.Length = dim.L;
+            ant.Width = dim.W;
+            ant.GroundPlaneLength = dim.L_gnd;
+            ant.GroundPlaneWidth = dim.W_gnd;
+            ant.Substrate = d;
+            ant.StripLineWidth = W_feed;
+            
+            % Feed location calculations for inset
+            if nargin < 4
+                feed_offset = dim.L/4;
+            end
+            % Inset distance
+            ant.NotchLength = feed_offset;
+            ant.NotchWidth = W_feed * 1.5; % clearance around line
+        else
+            warning('patchMicrostripInsetfed not found. Falling back to probe feed.');
+            ant = patchMicrostrip;
+            ant.Length = dim.L;
+            ant.Width = dim.W;
+            ant.GroundPlaneLength = dim.L_gnd;
+            ant.GroundPlaneWidth = dim.W_gnd;
+            ant.Substrate = d;
+            
+            if nargin < 4
+                feed_offset = 0;
+            end
+            ant.FeedOffset = [feed_offset, 0];
+        end
+    else
+        % Coaxial probe feed (default)
+        ant = patchMicrostrip;
+        ant.Length = dim.L;
+        ant.Width = dim.W;
+        ant.GroundPlaneLength = dim.L_gnd;
+        ant.GroundPlaneWidth = dim.W_gnd;
+        ant.Substrate = d;
+        
+        if nargin < 4
+            feed_offset = 0;
+        end
+        % For probe feed, FeedOffset dictates where the probe hits the patch
+        ant.FeedOffset = [feed_offset, 0];
+    end
     
     % Set conductor properties
-    ant.Conductor = metal('Copper');
-    ant.Conductor.Thickness = cfg.cond_thickness;
-    ant.Conductor.Conductivity = cfg.sigma_copper;
-    
-    % Determine feed position
-    % For patchMicrostrip in MATLAB, FeedOffset is a 1x2 vector [x-offset, y-offset]
-    % Origin is at the center of the patch.
-    if nargin < 4
-        feed_offset = 0;
-    end
-    ant.FeedOffset = [feed_offset, 0];
     
     % Try to mesh it with lambda/10 for accuracy
     try

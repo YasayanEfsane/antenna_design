@@ -20,6 +20,7 @@ function cfg = config()
 
     % Feed properties
     cfg.Z0 = 50;                    % Target characteristic impedance (Ohms)
+    cfg.feed_type = 'probe';        % 'probe' for coaxial feed, 'inset' for microstrip line feed
 
     % Simulation Settings
     cfg.mesh_lambda_ratio = 10;     % Mesh size = lambda / mesh_lambda_ratio
