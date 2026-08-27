@@ -11,6 +11,7 @@ A comprehensive MATLAB project for the analytical design, full-wave electromagne
 - **Full-Wave Simulation:** Evaluates Impedance, S11, VSWR, and 3D Radiation Patterns using MATLAB's Antenna Toolbox.
 - **Automated Optimization:** Employs the Optimization Toolbox (`fminsearch`) to fine-tune physical dimensions for perfect resonance at exactly 2.45 GHz.
 - **Antenna Array Synthesis:** Constructs a 2x2 phased array and calculates the enhanced directivity and radiation pattern using the Pattern Multiplication principle (+6 dB Gain improvement).
+- **Parameter Sweep Analysis:** Sweeps substrate thickness (1mm to 3mm) to analyze the physical effects on impedance bandwidth and antenna efficiency.
 - **Automated Reporting:** Generates a structured markdown technical report and exports all numerical data to CSV/MAT files.
 
 ##  Requirements
@@ -45,8 +46,12 @@ A comprehensive MATLAB project for the analytical design, full-wave electromagne
    ```matlab
    run_array_simulation
    ```
+5. **Run the Substrate Parameter Sweep:**
+   ```matlab
+   run_parameter_sweep
+   ```
 
-##  Simulation Results
+## 📊 Simulation Results
 
 After running the full-wave electromagnetic simulation and parameter optimization, the single patch is perfectly tuned to 2.45 GHz, and the 2x2 array demonstrates a massive gain improvement.
 
@@ -58,8 +63,11 @@ After running the full-wave electromagnetic simulation and parameter optimizatio
 
 ### 2x2 Array 3D Radiation Pattern
 By arranging four of these optimized patches in a 2x2 planar array with a half-wavelength spacing, the maximum directivity increases from **~4.1 dBi** to **~10.1 dBi**, significantly enhancing the signal range and directivity.
-
 ![2x2 Array Pattern](results/array_pattern.png)
+
+### Parameter Sweep Analysis
+Analyzing the antenna bandwidth and maximum gain by varying the FR-4 substrate thickness from 1 mm to 3 mm reveals the trade-offs in microstrip antenna design. Thick substrates induce surface waves, which can completely destroy impedance matching (seen as 0% bandwidth at 3mm).
+![Parameter Sweep Result](results/parameter_sweep.png)
 
 ## 📄 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
