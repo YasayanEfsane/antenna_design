@@ -5,7 +5,7 @@
 
 A comprehensive MATLAB project for the analytical design, full-wave electromagnetic simulation, parameter optimization, and array synthesis of a 2.45 GHz Microstrip Patch Antenna. This antenna is optimized for Wi-Fi, Bluetooth, and ISM band applications using an FR-4 substrate.
 
-## 📌 Features
+##  Features
 
 - **Analytical Design:** Calculates theoretical patch dimensions based on the transmission line model.
 - **Full-Wave Simulation:** Evaluates Impedance, S11, VSWR, and 3D Radiation Patterns using MATLAB's Antenna Toolbox.
@@ -15,7 +15,7 @@ A comprehensive MATLAB project for the analytical design, full-wave electromagne
 - **PCB Gerber Export:** Generates industry-standard RS-274X Gerber and Excellon drill files for physical manufacturing.
 - **Automated Reporting:** Generates a structured markdown technical report and exports all numerical data to CSV/MAT files.
 
-## 🛠️ Requirements
+##  Requirements
 
 - MATLAB R2021a or newer.
 - **Antenna Toolbox** (Required for 3D modeling and EM simulation).
@@ -23,7 +23,7 @@ A comprehensive MATLAB project for the analytical design, full-wave electromagne
 - **RF PCB Toolbox** (Required for Gerber export).
 - **RF Toolbox** (Optional, used for Smith Chart generation).
 
-## 📂 Project Structure
+##  Project Structure
 
 - `main.m`: The primary execution script that runs the single-element design, optimization, and report generation.
 - `run_array_simulation.m`: A standalone script to build and simulate the 2x2 antenna array.
@@ -34,7 +34,7 @@ A comprehensive MATLAB project for the analytical design, full-wave electromagne
 - `report/`: Contains the auto-generated `project_report.md`.
 - `results/`: Contains generated PNG plots, CSV tables, and MAT data files.
 
-## 🚀 How to Run
+##  How to Run
 
 1. Clone the repository and navigate to the folder in the MATLAB command window.
 2. **Run tests** to ensure the core mathematical functions and your MATLAB environment are set up correctly:
@@ -59,7 +59,7 @@ A comprehensive MATLAB project for the analytical design, full-wave electromagne
    export_to_gerber
    ```
 
-## 📊 Simulation Results
+##  Simulation Results
 
 After running the full-wave electromagnetic simulation and parameter optimization, the single patch is perfectly tuned to 2.45 GHz, and the 2x2 array demonstrates a massive gain improvement.
 
@@ -77,5 +77,5 @@ By arranging four of these optimized patches in a 2x2 planar array with a half-w
 Analyzing the antenna bandwidth and maximum gain by varying the FR-4 substrate thickness from 1 mm to 3 mm reveals the trade-offs in microstrip antenna design. Thick substrates induce surface waves, which can completely destroy impedance matching (seen as 0% bandwidth at 3mm).
 ![Parameter Sweep Result](results/parameter_sweep.png)
 
-## 📄 License
+##  License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
