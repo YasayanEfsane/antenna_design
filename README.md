@@ -12,6 +12,7 @@ A comprehensive MATLAB project for the analytical design, full-wave electromagne
 - **Automated Optimization:** Employs the Optimization Toolbox (`fminsearch`) to fine-tune physical dimensions for perfect resonance at exactly 2.45 GHz.
 - **Antenna Array Synthesis:** Constructs a 2x2 phased array and calculates the enhanced directivity and radiation pattern using the Pattern Multiplication principle (+6 dB Gain improvement).
 - **Parameter Sweep Analysis:** Sweeps substrate thickness (1mm to 3mm) to analyze the physical effects on impedance bandwidth and antenna efficiency.
+- **Surface Current Distribution:** Visualizes the surface current density on the patch to highlight electromagnetic hotspots at resonance.
 - **PCB Gerber Export:** Generates industry-standard RS-274X Gerber and Excellon drill files for physical manufacturing.
 - **Automated Reporting:** Generates a structured markdown technical report and exports all numerical data to CSV/MAT files.
 
@@ -54,12 +55,16 @@ A comprehensive MATLAB project for the analytical design, full-wave electromagne
    ```matlab
    run_parameter_sweep
    ```
-6. **Export to Gerber:**
+6. **Visualize Surface Current:**
+   ```matlab
+   plot_current_distribution
+   ```
+7. **Export to Gerber:**
    ```matlab
    export_to_gerber
    ```
 
-##  Simulation Results
+## 📊 Simulation Results
 
 After running the full-wave electromagnetic simulation and parameter optimization, the single patch is perfectly tuned to 2.45 GHz, and the 2x2 array demonstrates a massive gain improvement.
 
@@ -68,6 +73,10 @@ After running the full-wave electromagnetic simulation and parameter optimizatio
 
 ### Voltage Standing Wave Ratio (VSWR)
 ![Optimized VSWR Plot](results/optimized_vswr.png)
+
+### Surface Current Distribution
+Visualizing the surface current density at exactly 2.45 GHz shows where the electromagnetic energy is concentrated. The highest current density (red regions) appears along the feed line and the center of the patch, while the radiating edges have low current and high voltage.
+![Current Distribution](results/current_distribution.png)
 
 ### 2x2 Array 3D Radiation Pattern
 By arranging four of these optimized patches in a 2x2 planar array with a half-wavelength spacing, the maximum directivity increases from **~4.1 dBi** to **~10.1 dBi**, significantly enhancing the signal range and directivity.
